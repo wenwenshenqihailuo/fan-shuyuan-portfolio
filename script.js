@@ -92,7 +92,6 @@ if (eyeStage && heroEyes.length && !reduceMotion.matches) {
     });
   }, { passive: true });
 }
-
 const assistant = document.querySelector('[data-assistant]');
 const assistantHint = assistant?.querySelector('.assistant-hint');
 const assistantPanel = assistant?.querySelector('#assistant-panel');
