@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AmbyUni · 让陪伴真的记得</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Ma+Shan+Zheng&family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ambyuni.css" />
+  <link rel="stylesheet" href="ambyuni-gallery.css" />
+  <link rel="stylesheet" href="ambyuni-content.css" />
+  <link rel="stylesheet" href="portfolio-unified.css" />
+</head>
+<body>
+  <div class="paper-grain"></div>
+  <header class="case-nav">
+    <a href="index.html?tab=products#explore" class="back-link">← 返回作品集</a>
+    <p>FAN SHUYUAN · CASE STUDY 01</p>
+    <span>2025</span>
+  </header>
+
+  <main>
+    <section class="case-hero">
+      <div class="case-copy">
+        <p class="case-kicker">TCL 雷鸟 · AI 情感陪伴硬件</p>
+        <h1>让陪伴，<br/><i>真的记得。</i></h1>
+        <p class="case-lead">为 AmbyUni 重构记忆与对话系统，让每一次聊天都可以成为下一次相遇的起点。</p>
+        <div class="case-role"><span>我的角色</span><b>AI 产品经理</b><span>项目周期</span><b>2025.10 — 2026.03</b></div>
+      </div>
+      <div class="amby-cover" aria-label="AmbyUni 记忆星球封面">
+        <div class="cover-orbit orbit-one"></div><div class="cover-orbit orbit-two"></div>
+        <div class="cover-note note-one">记住你的<br/>每一个小宇宙</div>
+        <div class="cover-note note-two">memory<br/>matters ✦</div>
+        <div class="cover-star star-pink"><div class="face">✦</div></div>
+        <div class="cover-star star-mint"><div class="face">⌣</div></div>
+        <div class="cover-star star-yellow"><div class="face">♥</div></div>
+        <div class="memory-planet"><span>AMBY<br/><small>MEMORY<br/>GARDEN</small></span></div>
+        <div class="cover-spark sp-a">✦</div><div class="cover-spark sp-b">✳</div><div class="cover-spark sp-c">·</div>
+      </div>
+    </section>
+
+    <section class="case-section context">
+      <div class="case-label">01 / PROJECT BACKGROUND</div>
+      <div class="context-copy"><p class="display-copy">一台陪伴机器人，<br/>不该只拥有 <mark>当下。</mark></p><p>为提升用户使用率，我分析了 200 位测试用户的历史对话。结果显示，长时间陪伴被两件事打断：角色缺乏对关系细节的连续记忆，硬件端对话也因过长的生成链路失去自然节奏。</p></div>
+    </section>
+
+    <section class="case-section problem-grid">
+      <article><span>PAIN POINT 01</span><h2>记忆模块割裂，<br/>对话缺乏连续性。</h2><p>系统仅依赖大模型上下文窗口维持短期记忆；一旦超出窗口，用户的偏好、习惯和重要事件便会丢失。用户连续聊了三天，角色却不记得第一天的内容，同一话题反复从零开始，陪伴感与人格连续性被严重削弱。</p><div class="problem-doodle lost"><i>…</i><b>我之前说过的<br/>你还记得吗？</b></div></article>
+      <article><span>PAIN POINT 02</span><h2>对话链路冗长，<br/>响应延迟过高。</h2><p>从语音输入到机器人语音回复，需要经历转文字、记忆检索、回复生成、转语音、下载与播放，完整链路耗时超过 2 分钟。过长的等待破坏自然节奏，用户感到自己在和一台反应迟钝的机器聊天。</p><div class="problem-doodle wait"><i>02:00</i><b>还在想吗？</b></div></article>
+    </section>
+
+    <section class="case-section solution">
+      <div class="case-label">02 / DIALOGUE SYSTEM REBUILD</div>
+      <div class="solution-heading"><h2>让对话先回到<br/><i>自然的节奏。</i></h2><p>对原有架构解耦：豆包专注角色扮演，时间、空间等动态信息由 Minimax 预处理后经 User Prompt 输入。单次回答生成速度从超过 2 分钟降低至 100 秒内。</p></div>
+      <div class="dialogue-flow"><span>语音输入</span><b>→</b><span>Minimax 预处理</span><b>→</b><span>豆包角色扮演</span><b>→</b><span>语音回复</span></div>
+    </section>
+
+    <section class="case-section solution memory-rebuild">
+      <div class="case-label">03 / MEMORY SYSTEM REBUILD</div>
+      <div class="solution-heading"><h2>把关系里的细节，<br/><i>变成可持续的记忆。</i></h2><p>主导设计短期 10 轮、长期 50 轮的分层架构；长期记忆按情绪、偏好、意图与重要事件分类，并通过 Prompt 优化提升总结的准确性与信息密度。</p></div>
+      <div class="memory-map"><div class="map-title">AMBY'S MEMORY SYSTEM</div><div class="memory-flow"><div class="memory-stage"><span class="stage-label">INPUT</span><div class="map-node user">用户对话</div><small>语音 / 文字<br/>当前上下文</small></div><div class="memory-arrow" aria-hidden="true">→</div><div class="memory-stage memory-layers"><span class="stage-label">MEMORY LAYERS</span><div class="map-node short">短期记忆<br/><b>10 轮</b></div><div class="layer-divider">摘要与筛选</div><div class="map-node long">长期记忆<br/><b>50 轮</b></div></div><div class="memory-arrow" aria-hidden="true">→</div><div class="memory-stage categories"><span class="stage-label">LONG-TERM CATEGORIES</span><div class="memory-category-grid"><div class="map-node emotion">情绪</div><div class="map-node preference">偏好</div><div class="map-node intent">意图</div><div class="map-node event">重要事件</div></div></div></div><div class="map-caption">上下文记忆 + 外部数据库 + 用户自监督摘要</div></div>
+    </section>
+
+    <section class="case-section interface-showcase">
+      <div class="case-label">04 / PRODUCT EXPERIENCE</div>
+      <div class="showcase-heading"><h2>把长期记忆，<br/>变成 <i>看得见的陪伴。</i></h2><p>基于长期记忆功能，设计小程序端的「记忆树」：用户点击记忆果实，即可看到对应的记忆内容，重新回看与角色共同经历的细节。</p></div>
+      <div class="ui-gallery">
+        <figure class="gallery-main"><img src="memory-tree.jpeg" alt="AmbyUni 记忆树功能界面"/><figcaption>Memory Tree · 将长期记忆可视化</figcaption></figure>
+        <figure><img src="character-square.jpeg" alt="AmbyUni 角色广场与角色入口"/><figcaption>角色与对话入口</figcaption></figure>
+        <figure><img src="dialogue-content.jpeg" alt="AmbyUni 角色自然对话界面"/><figcaption>自然对话体验</figcaption></figure>
+        <figure><img src="calendar.jpeg" alt="AmbyUni 日历与事件记录界面"/><figcaption>小日记与事件沉淀</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="case-section contribution">
+      <div class="case-label">05 / MY RESPONSIBILITY</div>
+      <div class="contribution-grid">
+        <article><b>01 / RESEARCH</b><h3>定位真实断点</h3><p>分析 200 位测试用户的历史对话，归纳出记忆连续性与硬件端响应延迟两类核心问题。</p></article>
+        <article><b>02 / MEMORY</b><h3>明确工程路径</h3><p>引入“上下文记忆 + 外部数据库 + 用户自监督摘要”的混合架构，定义长期记忆的完整工程路径。</p></article>
+        <article><b>03 / DIALOGUE</b><h3>重塑对话链路</h3><p>拆解角色扮演与动态信息处理，让单次回复从超过 2 分钟缩短至 100 秒内。</p></article>
+      </div>
+    </section>
+
+    <section class="case-section outcomes">
+      <div class="case-label">06 / OUTCOMES</div>
+      <p class="outcome-title">从一段对话，<br/>长成一段关系。</p>
+      <div class="outcome-grid"><article><b>90%</b><span>跨时长对话自然重启率</span></article><article><b>-60%</b><span>记忆错误减少</span></article><article><b>&lt;100s</b><span>单次回答生成速度</span></article><article><b>60%</b><span>新功能主动访问率</span></article></div>
+    </section>
+
+    <section class="case-next"><p>下一步</p><a href="index.html?tab=products#explore">返回作品集 <b>↗</b></a></section>
+  </main>
+</body>
+</html>

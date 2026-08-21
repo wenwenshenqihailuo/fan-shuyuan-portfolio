@@ -1,0 +1,23 @@
+/* Envelope badge treatment for the contact section. */
+.contact{background:linear-gradient(to bottom,#fff 0 110px,#232321 110px)!important;padding-top:110px!important}
+.mail-mark{top:-75px!important;width:150px!important;height:150px!important;background:#232321!important;border:1.5px solid #fffdf8!important}
+.mail-mark:before{width:63px!important;height:44px!important;border:2px solid #fffdf8!important;border-radius:2px!important}
+.mail-mark i:before,.mail-mark i:after{width:37px!important;height:2px!important;top:75px!important;background:#fffdf8!important}
+.mail-mark i:before{left:37px!important;transform:rotate(34deg)!important}
+.mail-mark i:after{right:37px!important;transform:rotate(-34deg)!important}
+@media(max-width:760px){.contact{background:linear-gradient(to bottom,#fff 0 82px,#232321 82px)!important;padding-top:82px!important}.mail-mark{top:-50px!important;width:100px!important;height:100px!important}.mail-mark:before{width:43px!important;height:30px!important;border-width:1.5px!important}.mail-mark i:before,.mail-mark i:after{width:25px!important;height:1.5px!important;top:50px!important}.mail-mark i:before{left:25px!important}.mail-mark i:after{right:25px!important}}
+.footer-wordmark{letter-spacing:.08em!important}.footer-wordmark span{display:none!important}
+
+/* Use the supplied line-art envelope inside the circular badge. */
+.mail-mark:before,
+.mail-mark i:before,
+.mail-mark i:after{display:none!important}
+.mail-art{
+  display:block;
+  width:78%;
+  height:auto;
+  max-height:78%;
+  object-fit:contain;
+  margin:auto;
+}
+@media(max-width:760px){.mail-art{width:78%;max-height:78%}}

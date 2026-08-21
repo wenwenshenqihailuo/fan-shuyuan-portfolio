@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 560" role="img" aria-labelledby="title desc">
+  <title id="title">挥手的线稿人物</title>
+  <desc id="desc">一个短发、微笑、穿短袖衬衫的简笔人物正在挥手。</desc>
+  <style>
+    .wave-arm {
+      transform-box: fill-box;
+      transform-origin: 100% 87%;
+      animation: hero-wave 2.4s ease-in-out infinite;
+    }
+    @keyframes hero-wave {
+      0%, 100% { transform: rotate(-3deg); }
+      22% { transform: rotate(10deg); }
+      44% { transform: rotate(-4deg); }
+      66% { transform: rotate(11deg); }
+      84% { transform: rotate(0deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .wave-arm { animation: none; }
+    }
+  </style>
+  <g fill="none" stroke="#11110f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M194 61c6-15 17-25 31-31M203 65c14-14 31-18 48-14M210 70c18-10 37-9 54-3"/>
+    <circle cx="185" cy="144" r="94"/>
+    <path d="M150 127c8-4 16-5 24-3M205 126c9 1 17 4 24 9"/>
+    <path d="M168 171v2M207 171v2" stroke-width="12"/>
+    <path d="M177 212c9 8 21 8 30 0"/>
+    <path d="M185 239v38"/>
+    <path fill="#fff" d="M127 281c29-15 82-15 111 3l18 128c-35 15-91 16-129 0l8-131z"/>
+    <path d="M185 276v138"/>
+    <g class="wave-arm">
+      <path d="M128 283l-43 16-45-61"/>
+      <path d="M40 238c-10-3-17-11-20-22l-8-32c-3-14 13-19 18-6l10 29-2-38c-1-14 15-16 18-3l5 33 3-38c1-13 17-12 18 1l-1 36 10-24c5-11 20-5 16 7l-14 35c-8 22-27 35-49 35z"/>
+    </g>
+    <path d="M238 283l38 17 27 60"/>
+    <path d="M303 360c12 4 20 14 19 26-1 13-12 22-24 20-12-1-20-12-18-24 1-9 7-17 15-20"/>
+    <path d="M154 414l-3 129M215 414l14 127"/>
+    <path d="M117 544c12-12 47-14 61-1l1 8h-67c-5 0-4-4 5-7zM207 544c13-11 48-11 61 3 3 3 1 5-4 5h-61z"/>
+  </g>
+</svg>

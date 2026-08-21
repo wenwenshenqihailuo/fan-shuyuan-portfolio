@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer-to-Offer · 范书源</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@500;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="case-studies.css" />
+  <link rel="stylesheet" href="project-scope.css" />
+  <link rel="stylesheet" href="portfolio-unified.css" />
+</head>
+<body class="case-page bank">
+  <header class="case-nav"><a href="index.html?tab=products#explore">← 返回作品集</a><strong>FAN SHUYUAN · CASE STUDY 02</strong><span>2024</span></header>
+  <main>
+    <section class="case-hero"><div><p class="eyebrow">IT 英皇 · 银行合作项目</p><h1>把优惠，<br/><i>推荐到刚刚好。</i></h1><p class="hero-summary">为银行合作方设计 Customer-to-Offer 智能推荐 Agent，帮助用户从模糊的消费场景出发，获得匹配的信用卡优惠。</p><div class="role-list"><span><b>角色</b>AI 产品经理</span><span><b>范围</b>Query / RAG / POC</span><span><b>周期</b>2024 — 2025</span></div></div><figure class="case-visual"><img src="306fb260eda9f427e16a0fe5ce057a03.jpg" alt="信用卡优惠智能推荐 Agent 的对话与推荐结果" /><figcaption class="visual-caption">CUSTOMER-TO-OFFER · LIVE PRODUCT</figcaption></figure></section>
+    <section class="case-section"><div class="section-grid"><p class="section-tag">01 / THE PROBLEM</p><div><h2>用户说不清需求，<br/>系统就<i>找不准优惠。</i></h2><p class="body-copy">合作方希望提升信用卡使用率并减少退卡。初版产品面对短句、口语化与多意图查询时，常常无法正确理解场景；细碎的优惠资料也让回答出现幻觉。</p><div class="pain-grid"><article><b>PAIN 01</b><h3>意图不够清楚</h3><p>短 Query 缺少上下文，原有逻辑的意图识别准确率只有 40%。</p></article><article><b>PAIN 02</b><h3>知识库太碎</h3><p>优惠信息以碎片化文本储存，检索命中后仍难以确保推荐与场景匹配。</p></article></div></div></div></section>
+    <section class="case-section process"><div class="section-grid"><p class="section-tag">02 / THE APPROACH</p><div><h2>把一句模糊提问，<br/>拆成可<i>验证的路径。</i></h2><p class="body-copy">我从超过 100 个 bad case 开始，重新定义 Query 理解与优惠检索的连接方式。</p><div class="steps"><article><b class="step-no">01</b><h3>系统拆解 bad case</h3><p>归类短 Query、场景缺失与表达歧义，迭代 Query 逻辑并加入短 Query 联想能力。</p></article><article><b class="step-no">02</b><h3>重建 RAG 资料层</h3><p>以 offer_id 为核心重新 chunking，并加入全局召回与关键词混合召回，让同一优惠的规则完整可用。</p></article><article><b class="step-no">03</b><h3>用 POC 继续校准</h3><p>组织 200 名用户测试，以问卷与行为反馈推动 3 轮产品细节优化，确认推荐的可理解性与可用性。</p></article></div></div></div></section>
+    <section class="case-section"><div class="evidence"><img src="2.jpeg" alt="银行优惠推荐 Agent 的真实优惠详情与信用卡匹配结果" /><div class="note"><div><span>LIVE OFFER MATCH</span><h3>从用餐场景，<br/>到可执行的优惠。</h3><p class="note-lead">Agent 把一句“周末想吃大利菜”，转成一条可以立即判断和使用的推荐。</p><div class="offer-facts"><span><b>场景</b>Fine dining</span><span><b>匹配</b>商户 · 折扣 · 信用卡</span><span><b>补充</b>电话 · 地址 · 人均消费</span><span><b>依据</b>优惠条件与来源</span></div></div><span>CUSTOMER-TO-OFFER · PRODUCT UI</span></div></div></section>
+    <section class="case-section results"><p class="section-tag">03 / OUTCOME</p><p class="results-title">从猜用户想要什么，<br/>到给出<i>更对的选择。</i></p><div class="result-grid"><article><b>40% → 90%</b><span>意图识别准确率</span></article><article><b>60% → 90%</b><span>优惠与场景匹配准确率</span></article><article><b>40% → 60%</b><span>POC 用户满意度</span></article><article><b>30% → 45%</b><span>信用卡使用率</span></article></div></section>
+    <section class="project-scope"><p>MY RESPONSIBILITY</p><div class="scope-items"><article><b>01 / QUERY</b><strong>理解模糊需求</strong><span>系统性分析超过 100 个 bad case，迭代 Query 逻辑并加入短 Query 联想能力。</span></article><article><b>02 / RAG</b><strong>重建优惠知识库</strong><span>以 offer_id 组织 chunking，加入全局召回与关键词混合召回，降低回答幻觉。</span></article><article><b>03 / POC</b><strong>推进用户验证</strong><span>主导 200 名用户测试，结合问卷反馈推动 3 轮细节优化与项目验收。</span></article></div></section>
+  </main><footer class="case-footer"><p>NEXT CASE</p><a href="autopush.html">让内容自己跑起来 <b>↗</b></a></footer>
+</body>
+</html>
