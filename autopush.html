@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DSPy AutoPush · 范书源</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@500;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="case-studies.css" />
+  <link rel="stylesheet" href="project-scope.css" />
+  <link rel="stylesheet" href="portfolio-unified.css" />
+</head>
+<body class="case-page auto">
+  <header class="case-nav"><a href="index.html?tab=products#explore">← 返回作品集</a><strong>FAN SHUYUAN · CASE STUDY 03</strong><span>2025</span></header>
+  <main>
+    <section class="case-hero"><div><p class="eyebrow">IT 英皇 · 内部提效项目</p><h1>让内容自己<br/><i>跑起来。</i></h1><p class="hero-summary">用 DSPy 与 n8n 串起“数据收集 → AI 生成 → 人工审核 → 推送用户”的工作流，把编辑团队从重复生产中释放出来。</p><div class="role-list"><span><b>角色</b>AI 产品经理 / 独立搭建</span><span><b>范围</b>DSPy / n8n / A/B 测试</span><span><b>周期</b>2025</span></div></div><figure class="case-visual architecture"><img src="2.png" alt="AutoPush 使用 DSPy 评估与优化内容生成效果的运行结果" /><figcaption class="visual-caption">DSPY EVALUATION · AUTOMATED CONTENT PIPELINE</figcaption></figure></section>
+    <section class="case-section"><div class="section-grid"><p class="section-tag">01 / THE PROBLEM</p><div><h2>内容生产很忙，<br/>却没有<i>更有效。</i></h2><p class="body-copy">人工编辑投入高、内容同质化明显，而每一次推送的转化又缺少可持续复用的经验。目标不是单次生成文案，而是建立一条可优化、可审核、可回收数据的生产线。</p><div class="pain-grid"><article><b>PAIN 01</b><h3>编辑投入太重</h3><p>从收集资料、写作、校对到发出，重复性步骤多，难以覆盖全部运营场景。</p></article><article><b>PAIN 02</b><h3>好内容难复用</h3><p>高转化样本没有被结构化地转成生成策略，导致文案质量依赖个人经验。</p></article></div></div></div></section>
+    <section class="case-section process"><div class="section-grid"><p class="section-tag">02 / THE APPROACH</p><div><h2>把“写一篇”，<br/>变成一条<i>学习型流程。</i></h2><p class="body-copy">项目从样本分析开始，再把内容生成、人工把关与效果回收连接在同一条工作流里。</p><div class="steps"><article><b class="step-no">01</b><h3>用样本定义好内容</h3><p>筛选 150 条 Open Rate 超过 50% 的推送作为高转化样本，并另设 50 条训练与测试数据，明确“符合编辑标准”的评估目标。</p></article><article><b class="step-no">02</b><h3>以 DSPy 优化提示策略</h3><p>独立设计基于 DSPy 的提示词优化方案，利用 BootstrapFewShot 迭代生成逻辑，让内容准确率从 60% 提升至 90%。</p></article><article><b class="step-no">03</b><h3>用 n8n 编排工作流</h3><p>将数据收集、AI 生成、人工审核、推送用户串成端到端流程；人工仍保留在发布前的关键判断位置。</p></article></div></div></div></section>
+    <section class="case-section"><div class="evidence"><div class="note"><div><span>THE LOOP</span><h3>数据不是起点，<br/>也是下一次生成的答案。</h3><p>每轮推送把结果回流到内容策略。上线后进行了超过 4 轮、每轮超过 14 天的 A/B 测试，用真实打开率持续检验自动化是否真的创造价值。</p></div><span>COLLECT → GENERATE → REVIEW → PUSH</span></div><img src="3.png" alt="自动化内容项目中的测试与内容评估材料" /></div></section>
+    <section class="case-section results"><p class="section-tag">03 / OUTCOME</p><p class="results-title">让团队更少重复，<br/>让内容<i>更有机会被打开。</i></p><div class="result-grid"><article><b>60% → 90%</b><span>生成内容符合编辑标准的准确率</span></article><article><b>-95%</b><span>流程中的人工投入</span></article><article><b>100%</b><span>项目覆盖率</span></article><article><b>30% → 40%</b><span>推送内容 Open Rate</span></article></div></section>
+    <section class="project-scope"><p>MY RESPONSIBILITY</p><div class="scope-items"><article><b>01 / DATA</b><strong>定义高转化样本</strong><span>筛选 150 条高转化推送，并使用 50 条数据构建训练与测试集，建立内容评估标准。</span></article><article><b>02 / DSPY</b><strong>优化生成策略</strong><span>独立设计 DSPy 提示词优化方案，通过 BootstrapFewShot 将内容准确率提升至 90%。</span></article><article><b>03 / N8N</b><strong>编排自动化链路</strong><span>独立搭建数据收集、AI 生成、人工审核与推送用户的端到端工作流。</span></article></div></section>
+  </main><footer class="case-footer"><p>NEXT CASE</p><a href="interview-replay.html">把面试变成底气 <b>↗</b></a></footer>
+</body>
+</html>

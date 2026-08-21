@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 520" role="img" aria-labelledby="title desc">
+  <title id="title">原创圆眼镜火柴人预览</title>
+  <desc id="desc">一个短发、圆眼镜、宽松短袖上衣的黑色线稿人物。</desc>
+  <rect width="360" height="520" fill="#ffffff"/>
+  <g fill="none" stroke="#20201d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="185" cy="480" rx="76" ry="8" opacity=".28"/>
+    <circle cx="183" cy="102" r="54"/>
+    <path d="M139 85c10-33 65-44 91-9M139 86c-8 10-10 19-10 29M204 48c12 6 20 15 25 26"/>
+    <circle cx="162" cy="101" r="17"/>
+    <circle cx="204" cy="101" r="17"/>
+    <path d="M179 101h8M141 100l-12-5M225 100l12-4M176 129c5 4 12 4 17 0"/>
+    <path d="M183 156v18"/>
+    <path fill="#fff" d="M142 173c17-10 62-10 83 1l7 100c-27 12-65 11-96-2l6-99z"/>
+    <path d="M165 174l18 13 18-13M154 250c17 8 41 8 60 0"/>
+    <path d="M145 190l-35 91 8 8M224 191l25 78-9 10"/>
+    <circle cx="118" cy="291" r="8" fill="#fff"/>
+    <circle cx="240" cy="279" r="8" fill="#fff"/>
+    <path d="M169 275l-11 131M198 276l19 125"/>
+    <path d="M150 406c11 6 25 6 33 0M207 402c11 6 25 6 34 0"/>
+  </g>
+</svg>
