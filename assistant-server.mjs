@@ -14,6 +14,7 @@ const bailianWorkspaceId = process.env.BAILIAN_WORKSPACE_ID;
 const bailianAppsUrl = (process.env.BAILIAN_APP_ENDPOINT || 'https://dashscope.aliyuncs.com/api/v1/apps').replace(/\/$/, '');
 const baseUrl = (process.env.OPENAI_BASE_URL || (dashscopeKey ? 'https://dashscope.aliyuncs.com/compatible-mode/v1' : 'https://api.openai.com/v1')).replace(/\/$/, '');
 const model = process.env.OPENAI_MODEL || 'qwen-plus';
+const corsOrigin = process.env.CORS_ORIGIN || '*';
 
 const profileContext = `
 你是范书源个人作品集网站的问答助手。只根据以下资料回答，不要编造经历、公司、指标或日期。
@@ -36,6 +37,15 @@ const mimeTypes = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; char
 function json(res, status, data) {
   res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
   res.end(JSON.stringify(data));
+}
+
+function setCorsHeaders(req, res) {
+  const requestOrigin = req.headers.origin;
+  const allowedOrigin = corsOrigin === '*' || requestOrigin === corsOrigin ? (requestOrigin || '*') : 'null';
+  res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Vary', 'Origin');
 }
 
 async function handleAssistant(req, res) {
@@ -98,6 +108,8 @@ async function handleStatic(req, res) {
 }
 
 createServer(async (req, res) => {
+  setCorsHeaders(req, res);
+  if (req.method === 'OPTIONS') { res.writeHead(204); res.end(); return; }
   if (req.method === 'POST' && req.url?.split('?')[0] === '/api/assistant') return handleAssistant(req, res);
   if (req.method === 'GET') return handleStatic(req, res);
   return json(res, 405, { error: 'Method not allowed' });

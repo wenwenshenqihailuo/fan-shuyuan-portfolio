@@ -100,6 +100,9 @@ const assistantClose = assistant?.querySelector('[data-assistant-close]');
 const assistantForm = assistant?.querySelector('[data-assistant-form]');
 const assistantInput = assistant?.querySelector('[data-assistant-input]');
 const assistantMessages = assistant?.querySelector('[data-assistant-messages]');
+const assistantApiUrl = ['localhost', '127.0.0.1'].includes(window.location.hostname)
+  ? '/api/assistant'
+  : 'https://fan-shussistant-iflboiixlw.cn-hangzhou.fcapp.run/api/assistant';
 
 function appendAssistantMessage(text, type) {
   const message = document.createElement('div');
@@ -122,7 +125,7 @@ async function askAssistant(question) {
   assistantMessages?.append(pending);
   if (assistantMessages) assistantMessages.scrollTop = assistantMessages.scrollHeight;
   try {
-    const response = await fetch('/api/assistant', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: assistantConversation }) });
+    const response = await fetch(assistantApiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: assistantConversation }) });
     const result = await response.json();
     if (!response.ok) throw new Error(result.error || '问答服务暂时不可用。');
     assistantConversation.push({ role: 'assistant', content: result.answer });
