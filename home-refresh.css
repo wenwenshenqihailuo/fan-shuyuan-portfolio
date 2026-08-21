@@ -25,3 +25,21 @@ body{background:#fffdf9}.paper-grain{opacity:.045}.nav{height:74px;background:rg
 @media(max-width:1250px){.hero-character-stage{width:285px;height:355px;flex-basis:285px}}
 @media(max-width:760px){.hero-character-stage{width:148px;height:200px;flex-basis:148px;margin-bottom:-2px}.hero-eye{width:9px;height:13px}.hero-eye:after{width:4px;height:6px}}
 @media(max-width:410px){.hero-character-stage{width:125px;height:173px;flex-basis:125px}}
+
+/* Clear two-track layout for work and education history. */
+.journey-top h2{max-width:620px}
+.timeline-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:54px;margin-top:54px;border-top:1px solid #20201d}
+.timeline-group{min-width:0}
+.timeline-group-head{display:flex;align-items:baseline;gap:12px;padding:15px 0 16px;border-bottom:1px solid #20201d}
+.timeline-group-head span,.timeline-group-head p,.journey-status{font:500 10px 'DM Mono',monospace;letter-spacing:.08em}
+.timeline-group-head span{color:#ff6542}
+.timeline-group-head p{margin:0;color:#20201d}
+.timeline-group article{display:grid;grid-template-columns:112px 22px minmax(0,1fr);align-items:start;gap:0;padding:21px 0 23px;min-height:0;border-top:0}
+.timeline-group article:last-child{border-bottom:1px solid #20201d}
+.timeline-group article:hover{padding-left:0;background:transparent}
+.timeline-group .time{padding-top:2px;font-size:10px;line-height:1.45;color:#595650}
+.timeline-group .pin{width:14px;height:14px;margin-top:3px}
+.journey-item h3{font-size:19px;line-height:1.2;letter-spacing:0;margin:0}
+.journey-item p{font-size:12px;line-height:1.6;margin:6px 0 8px;color:#56534e}
+.journey-status{display:block;color:#ff6542}
+@media(max-width:760px){.timeline-groups{display:block;margin-top:38px}.timeline-group+.timeline-group{margin-top:34px}.timeline-group article{grid-template-columns:94px 20px minmax(0,1fr);padding:18px 0 20px}.timeline-group .time{font-size:9px}.journey-item h3{font-size:17px}.journey-item p{font-size:11px;margin-top:4px}.journey-status{font-size:8px}}

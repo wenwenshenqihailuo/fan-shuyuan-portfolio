@@ -1,3 +1,5 @@
 # Private resume documents stay local and are not published.
 范书源-作品集.pdf
 范书源_HKU.pdf
+.env
+.env.local

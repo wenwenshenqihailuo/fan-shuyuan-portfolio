@@ -1,0 +1,274 @@
+.profile-assistant {
+  position: fixed;
+  right: 28px;
+  bottom: 26px;
+  z-index: 20;
+  font-family: 'DM Mono', monospace;
+}
+
+.assistant-hint {
+  position: absolute;
+  right: 78px;
+  bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 9px 11px;
+  border: 1px solid #20201d;
+  background: #fffdf9;
+  color: #20201d;
+  box-shadow: 3px 3px 0 #20201d;
+  white-space: nowrap;
+  font-size: 10px;
+  animation: assistant-hint-in .45s .35s ease-out both;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.assistant-hint::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  bottom: 18px;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid #20201d;
+  border-right: 1px solid #20201d;
+  background: #fffdf9;
+  transform: rotate(45deg);
+}
+
+.assistant-hint span { color: #56534e; }
+.assistant-hint b { font-weight: 500; }
+
+.profile-assistant.is-open .assistant-hint,
+.assistant-hint[aria-hidden='true'] {
+  animation: none;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(8px);
+}
+
+@keyframes assistant-hint-in {
+  from { opacity: 0; transform: translateX(8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.assistant-launcher {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  padding: 0;
+  border: 1.5px solid #20201d;
+  border-radius: 50%;
+  background: #ff6542;
+  color: #20201d;
+  box-shadow: 5px 5px 0 #20201d;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.assistant-launcher::after {
+  content: '';
+  position: absolute;
+  inset: -7px;
+  border: 1px solid rgba(32, 32, 29, .24);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+.assistant-launcher:hover,
+.profile-assistant.is-open .assistant-launcher {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 #20201d;
+  background: #ffd65b;
+}
+
+.assistant-launcher:hover::after,
+.profile-assistant.is-open .assistant-launcher::after {
+  transform: scale(1.12);
+  opacity: .55;
+}
+
+.assistant-launcher:focus-visible {
+  outline: 2px solid #20201d;
+  outline-offset: 5px;
+}
+
+.assistant-launcher-mark {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #20201d;
+  border-radius: 50%;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.assistant-launcher-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.assistant-panel {
+  position: absolute;
+  right: 0;
+  bottom: 80px;
+  width: min(380px, calc(100vw - 32px));
+  overflow: hidden;
+  border: 1.5px solid #20201d;
+  background: #fffdf9;
+  color: #20201d;
+  box-shadow: 8px 8px 0 #20201d;
+  transform-origin: bottom right;
+  animation: assistant-pop .22s ease-out both;
+}
+
+.assistant-panel[hidden] { display: none; }
+
+@keyframes assistant-pop {
+  from { opacity: 0; transform: translateY(8px) scale(.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.assistant-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 18px 18px 15px;
+  background: #ffd65b;
+  border-bottom: 1.5px solid #20201d;
+}
+
+.assistant-eyebrow {
+  margin: 0 0 6px;
+  color: #56534e;
+  font-size: 9px;
+  letter-spacing: .08em;
+}
+
+.assistant-header h2 {
+  margin: 0;
+  font: 900 25px/1.05 'Noto Serif SC', serif;
+  letter-spacing: -.05em;
+}
+
+.assistant-close {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 1px solid #20201d;
+  background: transparent;
+  color: #20201d;
+  font: 20px/20px 'DM Mono', monospace;
+  cursor: pointer;
+}
+
+.assistant-close:hover,
+.assistant-close:focus-visible { background: #fffdf9; }
+
+.assistant-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 245px;
+  overflow: auto;
+  padding: 16px 15px 12px;
+  background: #fffdf9;
+}
+
+.assistant-message {
+  max-width: 88%;
+  padding: 10px 12px;
+  border: 1px solid #20201d;
+  font: 12px/1.65 'Noto Serif SC', serif;
+  white-space: pre-line;
+}
+
+.assistant-message-bot { align-self: flex-start; background: #f4f0e8; }
+.assistant-message-user { align-self: flex-end; background: #d8efff; }
+.assistant-message-pending { color: #6a665f; font-style: italic; }
+
+.assistant-prompts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 0 15px 13px;
+  background: #fffdf9;
+}
+
+.assistant-prompts button {
+  padding: 6px 8px;
+  border: 1px solid #20201d;
+  border-radius: 14px;
+  background: #fff;
+  color: #20201d;
+  font: 10px 'DM Mono', monospace;
+  cursor: pointer;
+}
+
+.assistant-prompts button:hover,
+.assistant-prompts button:focus-visible { background: #d8efff; }
+
+.assistant-form {
+  display: flex;
+  gap: 8px;
+  padding: 11px 12px;
+  border-top: 1px solid #20201d;
+  background: #f4f0e8;
+}
+
+.assistant-form input {
+  min-width: 0;
+  flex: 1;
+  padding: 10px 9px;
+  border: 1px solid #20201d;
+  border-radius: 2px;
+  outline: none;
+  background: #fffdf9;
+  color: #20201d;
+  font: 12px 'Noto Serif SC', serif;
+}
+
+.assistant-form input:focus { box-shadow: 2px 2px 0 #78b6e3; }
+
+.assistant-form button {
+  width: 36px;
+  border: 1.5px solid #20201d;
+  background: #78b6e3;
+  color: #20201d;
+  font: 20px 'DM Mono', monospace;
+  cursor: pointer;
+}
+
+.assistant-footnote {
+  margin: 0;
+  padding: 0 14px 11px;
+  background: #f4f0e8;
+  color: #6a665f;
+  font: 9px 'DM Mono', monospace;
+}
+
+@media (max-width: 760px) {
+  .profile-assistant { right: 16px; bottom: 16px; }
+  .assistant-hint { right: 0; bottom: 68px; }
+  .assistant-hint::after { right: 20px; bottom: -6px; transform: rotate(135deg); }
+  .assistant-panel { right: -2px; bottom: 76px; width: min(380px, calc(100vw - 24px)); }
+  .assistant-launcher { width: 56px; height: 56px; }
+  .assistant-messages { max-height: 36vh; }
+  .assistant-header h2 { font-size: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .assistant-launcher { transition: none; }
+  .assistant-panel,
+  .assistant-hint { animation: none; }
+}

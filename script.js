@@ -92,3 +92,73 @@ if (eyeStage && heroEyes.length && !reduceMotion.matches) {
     });
   }, { passive: true });
 }
+
+const assistant = document.querySelector('[data-assistant]');
+const assistantHint = assistant?.querySelector('.assistant-hint');
+const assistantPanel = assistant?.querySelector('#assistant-panel');
+const assistantToggle = assistant?.querySelector('[data-assistant-toggle]');
+const assistantClose = assistant?.querySelector('[data-assistant-close]');
+const assistantForm = assistant?.querySelector('[data-assistant-form]');
+const assistantInput = assistant?.querySelector('[data-assistant-input]');
+const assistantMessages = assistant?.querySelector('[data-assistant-messages]');
+
+function appendAssistantMessage(text, type) {
+  const message = document.createElement('div');
+  message.className = `assistant-message assistant-message-${type}`;
+  message.textContent = text;
+  assistantMessages?.append(message);
+  if (assistantMessages) assistantMessages.scrollTop = assistantMessages.scrollHeight;
+}
+
+const assistantConversation = [];
+
+async function askAssistant(question) {
+  const cleanQuestion = question.trim();
+  if (!cleanQuestion) return;
+  assistantConversation.push({ role: 'user', content: cleanQuestion });
+  appendAssistantMessage(cleanQuestion, 'user');
+  const pending = document.createElement('div');
+  pending.className = 'assistant-message assistant-message-bot assistant-message-pending';
+  pending.textContent = '正在查阅资料...';
+  assistantMessages?.append(pending);
+  if (assistantMessages) assistantMessages.scrollTop = assistantMessages.scrollHeight;
+  try {
+    const response = await fetch('/api/assistant', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: assistantConversation }) });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || '问答服务暂时不可用。');
+    assistantConversation.push({ role: 'assistant', content: result.answer });
+    appendAssistantMessage(result.answer, 'bot');
+  } catch (error) {
+    appendAssistantMessage(`问答服务暂时不可用：${error.message}。请确认你是通过 http://localhost:3000 打开网站，并已启动本地服务。`, 'bot');
+  } finally {
+    pending.remove();
+  }
+}
+
+if (assistant && assistantPanel && assistantToggle) {
+  const setAssistantOpen = open => {
+    assistantPanel.hidden = !open;
+    assistant.classList.toggle('is-open', open);
+    assistantHint?.setAttribute('aria-hidden', String(open));
+    assistantToggle.setAttribute('aria-expanded', String(open));
+    assistantToggle.setAttribute('aria-label', open ? '收起问答助手' : '打开问答助手');
+    assistantPanel.setAttribute('aria-hidden', String(!open));
+    if (open) assistantInput?.focus();
+  };
+  assistantToggle.addEventListener('click', () => setAssistantOpen(assistantPanel.hidden));
+  assistantClose?.addEventListener('click', () => setAssistantOpen(false));
+  document.addEventListener('click', event => {
+    if (!assistant.contains(event.target)) setAssistantOpen(false);
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !assistantPanel.hidden) setAssistantOpen(false);
+  });
+  assistantForm?.addEventListener('submit', event => {
+    event.preventDefault();
+    askAssistant(assistantInput.value);
+    assistantInput.value = '';
+  });
+  assistant.querySelectorAll('[data-assistant-prompt]').forEach(button => {
+    button.addEventListener('click', () => askAssistant(button.dataset.assistantPrompt));
+  });
+}
